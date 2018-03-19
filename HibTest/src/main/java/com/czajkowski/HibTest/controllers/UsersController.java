@@ -18,7 +18,7 @@ public class UsersController {
 
 	@Autowired
 	UserRepository userRepository;
-	
+	//test
 	@RequestMapping (method=RequestMethod.GET, value="/all")
 	public List<User> ListAllUsers() {
 		return userRepository.findAll();
@@ -27,11 +27,6 @@ public class UsersController {
 	public List<User> findByName(@PathVariable String name) {
 		return userRepository.findByFirstName(name);
 	}
-	/*hgkjgk*/
-	/*@RequestMapping (method=RequestMethod.POST, value="/{id}")
-	public List<User> updateById(@PathVariable String id, @RequestBody User user) {
-		return userRepository.updateById(id);
-	}*/
 	@RequestMapping (method=RequestMethod.POST, value="/create")
 	public List<User> create(@RequestBody User user) {
 		userRepository.save(user);
