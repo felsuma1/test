@@ -1,6 +1,7 @@
 package com.czajkowski.HibTest.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +19,6 @@ public class UsersController {
 
 	@Autowired
 	UserRepository userRepository;
-	//test
 	@RequestMapping (method=RequestMethod.GET, value="/all")
 	public List<User> ListAllUsers() {
 		return userRepository.findAll();
@@ -32,5 +32,8 @@ public class UsersController {
 		userRepository.save(user);
 		return userRepository.findAll();
 	}
-	//testmaster
+	@RequestMapping (method=RequestMethod.GET, value="/age")
+	public Optional<Integer> age() {
+		return userRepository.age();
+	}
 }
