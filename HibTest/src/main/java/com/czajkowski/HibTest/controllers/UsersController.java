@@ -27,6 +27,7 @@ public class UsersController {
 	public List<User> findByName(@PathVariable String name) {
 		return userRepository.findByFirstName(name);
 	}
+	/*hgkjgk*/
 	/*@RequestMapping (method=RequestMethod.POST, value="/{id}")
 	public List<User> updateById(@PathVariable String id, @RequestBody User user) {
 		return userRepository.updateById(id);
