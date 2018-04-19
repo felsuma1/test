@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+	<tr>
+		<th>Imie</th><th>Nazwisko</th><th>Wiek</th><th>Przyciski</th>
+	</tr>
+	<tr th:each="user, iterStat : ${users}">
+		<td th:text=${user.firstName}/><td th:text=${user.secondName}/><td th:text=${user.age}/><td><a th:href="@{'/delete/' + ${user.userId}}">Delete</a></td>
+	</tr>
+</table>
+<label th:text=${age}></label>
+</body>
+</html>

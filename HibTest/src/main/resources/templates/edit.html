@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:object="${user}" method="post" autocomplete="off" >
+	<table>
+		<tr>
+			<td>Id</td><td><input type="text" th:field=*{userId}></td>
+		</tr>
+		<tr>
+			<td>Imie</td><td><input type="text" th:field=*{firstName}></td>
+		</tr>
+		<tr>	
+			<td>Nazwisko</td><td><input type="text" th:field=*{secondName}></td>
+		</tr>
+		<tr>
+			<td>Wiek</td><td><input type="text" th:field=*{age}></td>
+		</tr>
+	</table>
+<button type="submit"></button>
+</form>
+</body>
+</html>
